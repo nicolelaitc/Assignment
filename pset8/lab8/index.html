@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+        <link href="styles.css" rel="stylesheet">
+        <title>Trivia!</title>
+
+        <script>
+
+            //run script once DOM is loaded
+            document.addEventListener('DOMContentLoaded', function(){
+
+                //turn green when the answer is correct
+                let correct = document.querySelector('.correct');
+                correct.addEventListener('click', function(){
+                    correct.style.backgroundColor = 'green';
+                    var a = document.querySelector('#Result');
+                    a.innerHTML = 'Correct!';
+                    a.style.color = 'green';
+                    a.style.fontWeight = '900';
+                });
+
+                let incorrects = document.querySelectorAll('.incorrect');
+                for (let i = 0; i < incorrects.length; i++) {
+                    incorrects[i].addEventListener('click', function()
+                    {
+                        incorrects[i].style.backgroundColor = 'red';
+                        var a = document.querySelector('#Result');
+                        a.innerHTML = 'Incorrect!';
+                        a.style.color = 'red';
+                        a.style.fontWeight = '900';
+                    })
+                }
+
+                let checking = document.querySelector('#check');
+                checking.addEventListener('click', function(){
+                    var b = document.getElementById("Answer");
+                    var c = document.querySelector('#Result2');
+                    if (b.value === "saber"){
+                        b.style.backgroundColor = 'green';
+                        c.innerHTML = 'Correct!';
+                        c.style.color = 'green';
+                        c.style.fontWeight = '900';
+                    } else {
+                        b.style.backgroundColor = 'red';
+                        c.innerHTML = 'Incorrect!';
+                        c.style.color = 'red';
+                        c.style.fontWeight = '900';
+                    }
+                }
+                );
+            });
+
+            // TODO: Add code to check answers to questions
+
+        </script>
+
+    </head>
+    <body>
+
+
+
+        <div class="jumbotron">
+            <h1>Trivia!</h1>
+        </div>
+
+        <div class="container">
+
+            <div class="section">
+                <h2>Part 1: Multiple Choice </h2>
+                <hr>
+                How many class are there when Fate/Grand Order was first launched? <br>
+
+                <button class="incorrect">3</button>
+                <button class="incorrect">5</button>
+                <button class="correct">7</button>
+
+                <p id="Result"></p>
+
+                <!-- TODO: Add multiple choice question here -->
+
+            </div>
+
+            <div class="section">
+                <h2>Part 2: Free Response</h2>
+                <hr>
+                <img src="https://play-lh.googleusercontent.com/VZwuIXIGUFIwk1z2IXhMaPcLqoSWfPcuK-JxXgvh_uM0Ob2qETvD9PHQ2rWEx9qiUQ" alt="FGO"> <br>
+
+                Who is she? <br>
+
+                <input type="text" id=Answer>
+                <button id="check">Submit</button>
+
+                <p id="Result2"></p>
+
+            </div>
+
+        </div>
+    </body>
+</html>

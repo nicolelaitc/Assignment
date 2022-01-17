@@ -1,0 +1,2 @@
+Hash basket: use strlen + first alphabet
+suppose size =  1170
