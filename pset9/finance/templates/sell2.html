@@ -1,0 +1,47 @@
+<!--display a form for buying stock-->
+
+{% extends "layout.html" %}
+
+{% block title %}
+    Buy Result
+{% endblock %}
+
+{% block main %}
+<style>
+.center {
+    margin-left: auto;
+    margin-right: auto;
+    }
+</style>
+
+<div class="section">
+    <h2>Result</h2>
+    <table class="center">
+        <thead>
+            <tr>
+                <th>Symbol</th>
+                <th>Name</th>
+                <th>Shares (total)</th>
+                <th>Price</th>
+                <th>Total</th>
+            </tr>
+        </thead>
+        <tbody>
+                <tr>
+                    <td>{{symbol}}</td>
+                    <td>{{company_name}}</td>
+                    <td>{{share_total}}</td>
+                    <td>{{cprice | usd }}</td>
+                    <td>{{total_price | usd }}</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>Cash:</td>
+                    <td>{{ccash | usd }}</td>
+                </tr>
+        </tbody>
+</div>
+
+{% endblock %}
